@@ -5,6 +5,10 @@
 	<meta charset="UTF-8">
 	<title>Test 2</title>
 	<style>
+		body {
+			background-image: url(img/background.jpg);
+			background-attachment:fixed; 
+		}
 		.test {
 			position: fixed;
 			top: 0;
@@ -13,7 +17,7 @@
 			display:none;
 		}
 		#content {
-			max-width: 1600px;
+			max-width: 1026px;
 			margin: auto;
 			left: 0%;
 			right: 0%;
@@ -26,10 +30,10 @@
 </head>
 <body>
 	<div id="content">
-		<header style="height: 100px; background: red">Header</header>
-		<header id="myHeader" onscroll="fixHeader" style="height: 100px; width: 100%; max-width: 1600px; background: red">"Sticky header menu"</header>
-		<div id="myPanel" style="float: left; height: 500px; width: 200px; background: blue">Panel</div>
-		<div id="myContents" style="background: yellow; height: auto; margin-left: 200px">
+		<header style="height: 183px; "><img src="img/header.png" alt="header"/></header>
+		<header id="myHeader" onscroll="fixHeader" style="height: 58px;"><img src="img/header_static.png" alt="header_static"/></header>
+		<div id="myPanel" style="float: left; height: 555px; width: 209px; "><img src="img/panel.png" alt="panel"/></div>
+		<div id="myContents" style="background: #333333; height: auto; margin-left: 209px">
 			<div style="height: 100px;">content</div>
 			<div style="height: 100px;">content</div>
 			<div style="height: 100px;">content</div>
@@ -50,15 +54,18 @@
 		window.onresize = function() {resizeWindow()};
 		
 		function resizeWindow(){
-			if(window.screen.width < 768){
+			var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+			if(width < 768){
 				document.getElementById("myPanel").className = "block";
+				document.getElementById("myContents").setAttribute("style", "margin-left: 0px; background: #333333; height: auto");
 			}else{
 				document.getElementById("myPanel").className = "";
+				document.getElementById("myContents").setAttribute("style", "margin-left: 209px; background: #333333; height: auto");
 			}
 		}
 
 		function fixHeader() {
-			if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+			if (document.body.scrollTop > 183 || document.documentElement.scrollTop > 183) {
 				document.getElementById("myHeader").className = "test";
 			} else {
 				document.getElementById("myHeader").className = "";
