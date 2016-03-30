@@ -1,0 +1,115 @@
+<!Doctype html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<title>Парфюмерия</title>
+	<style>
+	#scrollup {
+		position: fixed; 
+		opacity: 0.8; 
+		padding: 15px 10px 10px; 
+		background: #aaa;
+		border-radius: 5px; 
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		right: 10px; 
+		bottom: 10px; 
+		display: none; 
+		cursor: pointer;
+		float: right;
+		}
+		body {
+			background-image: url(img/background.jpg);
+			background-attachment:fixed; 
+		}
+		.test {
+			position: fixed;
+			top: 0;
+		}
+		.block{
+			display:none;
+		}
+		#content {
+			max-width: 1026px;
+			margin: auto;
+			left: 0%;
+			right: 0%;
+			position: absolute;
+		}
+	</style>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css"
+			rel="stylesheet"
+			type="text/css"></link>
+</head>
+<body>
+	<div id="content">
+		<header style="height: 183px; "><img src="img/header.png" alt="header"/></header>
+		<header id="myHeader" onscroll="fixHeader" style="height: 58px;"><img src="img/header_static.png" alt="header_static"/></header>
+		<div id="myPanel" style="float: left; height: 555px; width: 209px; "><img src="img/panel.png" alt="panel"/></div>
+		<div id="myContents" style="background: #333333; height: auto; margin-left: 209px">
+			<div style="height: 250px;"><img src="img/content_1.png" alt="header"/></div>
+			<div style="height: 192px;"><img src="img/content_2.png" alt="header"/></div>
+			<div style="height: 304px;"><img src="img/content_3.png" alt="header"/></div>
+			<div style="height: 339px;"><img src="img/content_4.png" alt="header"/></div>
+		</div>
+	</div>
+	<div id="scrollup"><img alt="Прокрутить вверх" src="img/up.png"></div>
+	
+	<script type='text/javascript'>
+			window.onload = function() { 
+
+			var scrollUp = document.getElementById('scrollup'); 
+
+			scrollUp.onmouseover = function() { 
+				scrollUp.style.opacity=0.3;
+				scrollUp.style.filter  = 'alpha(opacity=30)';
+			};
+
+			scrollUp.onmouseout = function() { 
+				scrollUp.style.opacity = 0.5;
+				scrollUp.style.filter  = 'alpha(opacity=50)';
+			};
+
+			scrollUp.onclick = function() {
+				window.scrollTo(0,0);
+			};
+
+			window.onscroll = function () { 
+				if ( window.pageYOffset > 0 ) {
+					scrollUp.style.display = 'block';
+				} else {
+					scrollUp.style.display = 'none';
+				}
+			};
+		};
+	</script>
+	
+	<script>
+		window.onscroll = function() {fixHeader()};
+		
+		window.onresize = function() {resizeWindow()};
+		
+		function resizeWindow(){
+			var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+			if(width < 768){
+				document.getElementById("myPanel").className = "block";
+				document.getElementById("myContents").setAttribute("style", "margin-left: 0px; background: #333333; height: auto");
+			}else{
+				document.getElementById("myPanel").className = "";
+				document.getElementById("myContents").setAttribute("style", "margin-left: 209px; background: #333333; height: auto");
+			}
+		}
+
+		function fixHeader() {
+			if (document.body.scrollTop > 183 || document.documentElement.scrollTop > 183) {
+				document.getElementById("myHeader").className = "test";
+			} else {
+				document.getElementById("myHeader").className = "";
+			}
+		}
+	</script>
+
+</body>
+
+</html>
