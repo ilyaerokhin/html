@@ -81,14 +81,20 @@
 				} else {
 					scrollUp.style.display = 'none';
 				}
+				
+				if (document.body.scrollTop > 183 || document.documentElement.scrollTop > 183) {
+					document.getElementById("myHeader").className = "test";
+				} else {
+					document.getElementById("myHeader").className = "";
+				}
 			};
 		};
 	</script>
 	
 	<script>
-		window.onscroll = function() {fixHeader()};
 		
 		window.onresize = function() {resizeWindow()};
+		
 		
 		function resizeWindow(){
 			var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
@@ -101,13 +107,6 @@
 			}
 		}
 
-		function fixHeader() {
-			if (document.body.scrollTop > 183 || document.documentElement.scrollTop > 183) {
-				document.getElementById("myHeader").className = "test";
-			} else {
-				document.getElementById("myHeader").className = "";
-			}
-		}
 	</script>
 
 </body>
