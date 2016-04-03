@@ -48,10 +48,30 @@
 		<header id="myHeader" onscroll="fixHeader" style="height: 58px;"><img src="img/header_static.png" alt="header_static"/></header>
 		<div id="myPanel" style="float: left; height: 555px; width: 209px; "><img src="img/panel.png" alt="panel"/></div>
 		<div id="myContents" style="background: #333333; height: auto; margin-left: 209px">
-			<div style="height: 250px;"><img src="img/content_1.png" alt="header"/></div>
-			<div style="height: 192px;"><img src="img/content_2.png" alt="header"/></div>
-			<div style="height: 304px;"><img src="img/content_3.png" alt="header"/></div>
-			<div style="height: 339px;"><img src="img/content_4.png" alt="header"/></div>
+			<div style="height: 246px;">
+				<img src="img/img_1.png" alt="header" style="margin: 10px; float: right;"/>
+				<p id="text" style="margin: 10px; float: left; width: 500px;">
+					<font size="4" color="#AE2BD4">Midnight Heat Beyonce для женщин</font>
+					<br><br>
+					<font size="3" color="white">Midnight Heat Beyonce - это аромат для женщин, принадлежит к группе ароматов восточные цветочные. Midnight Heat выпущен в 2012. Парфюмер: Olivier Gillotin. Верхние ноты: Слива, Карамбола и Питахайя; ноты сердца: Орхидея, Пион, Тюльпан и Цветок кактуса; ноты базы: Сандал, Пачули и Амбра.</font>
+				</p>
+			</div>
+			<div style="height: 246px;">
+				<img src="img/img_2.png" alt="header" style="margin: 10px; float: right;"/>
+				<p id="text" style="margin: 10px; float: left; width: 500px;">
+					<font size="4" color="#AE2BD4">Burberry Sport для женщин</font>
+					<br><br>
+					<font size="3" color="white">Burberry Sport for Women Burberry - это аромат для женщин, принадлежит к группе ароматов цветочные древесно-мускусные. Burberry Sport for Women выпущен в 2010. Burberry Sport for Women был создан Olivier Polge и Beatrice Piquet. Верхние ноты: Мандарин, Соль и Имбирь; ноты сердца: Петитгрейн, Жимолость, Магнолия и Солнечные ноты; ноты базы: Мускус, Кедр из Вирджинии, Ветивер и Песок.</font>
+				</p>
+			</div>
+			<div style="height: 246px;">
+				<img src="img/img_3.png" alt="header" style="margin: 10px; float: right;"/>
+				<p id="text" style="margin: 10px; float: left; width: 500px;">
+					<font size="4" color="#AE2BD4">Jolie Rose Azzaro для женщин</font>
+					<br><br>
+					<font size="3" color="white">Jolie Rose Azzaro - это аромат для женщин, принадлежит к группе ароматов цветочные. Это новый аромат, Jolie Rose выпущен в 2012. Верхние ноты: лимон, черная смородина, Кумкват; ноты сердца: Водяная лилия, роза и Фиалка; ноты базы: мускус и кедр.</font>
+				</p>
+			</div>
 		</div>
 	</div>
 	<div id="scrollup"><img alt="Прокрутить вверх" src="img/up.png"></div>
@@ -98,9 +118,9 @@
 		
 		function resizeWindow(){
 			var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-			if(width < 768){
+			if(width <= 960){
 				document.getElementById("myPanel").className = "block";
-				document.getElementById("myContents").setAttribute("style", "margin-left: 0px; background: #333333; height: auto");
+				document.getElementById("myContents").setAttribute("style", "margin-left: 0px; background: #333333; height: auto" );
 			}else{
 				document.getElementById("myPanel").className = "";
 				document.getElementById("myContents").setAttribute("style", "margin-left: 209px; background: #333333; height: auto");
